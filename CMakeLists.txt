@@ -5,11 +5,14 @@ project(cpp11)
 set(WITH_TEST ON CACHE BOOL "Enable Test")
 
 # Settings
+set(CMAKE_THREAD_PREFER_PTHREAD ON)
 if(CMAKE_COMPILER_IS_GNUCXX)
   set(CMAKE_CXX_FLAGS "-std=c++11")
 endif(CMAKE_COMPILER_IS_GNUCXX)
 
 # System Checking
+find_package(Threads)
+
 if(WITH_TEST)
   message(STATUS "Test is Enabled")
 
