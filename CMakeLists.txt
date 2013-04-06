@@ -4,6 +4,11 @@ project(cpp11)
 # Define Variables
 set(WITH_TEST ON CACHE BOOL "Enable Test")
 
+# Settings
+if(CMAKE_COMPILER_IS_GNUCXX)
+  set(CMAKE_CXX_FLAGS "-std=c++11")
+endif(CMAKE_COMPILER_IS_GNUCXX)
+
 # System Checking
 if(WITH_TEST)
   message(STATUS "Test is Enabled")
